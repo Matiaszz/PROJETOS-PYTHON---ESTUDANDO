@@ -1,3 +1,5 @@
+# verificando quais são os dois ultimos dígitos de um cpf
+
 cpf = '41034742035' #colocar cpf aqui
 nove_digitos = cpf[:9] # aqui pega os 9 primeiros indices do cpf
 regressiva1 = 10 #contagem regressiva
