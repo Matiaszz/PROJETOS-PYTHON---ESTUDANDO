@@ -8,7 +8,7 @@ def multiplicacao (*args):
     for valor in args:
         acumulador *= valor
     return(acumulador)
-
+    
 numeros = 1,2,3,4,5,6
 total = multiplicacao(*numeros)
 print(total)
@@ -20,6 +20,5 @@ def par_ou_impar(numero):
         if numero % 2 == 0:
             return f'o numero {numero} é par'
         return f'o numero {numero} é impar'
-    
-var = par_ou_impar(6)
-print(var)
+
+print(par_ou_impar(6))
