@@ -1,18 +1,6 @@
 import os
 
 
-def get_option(cmd):
-    commands_opt = {
-        'food': 'food',
-        'health': 'health',
-        'transport': 'transport',
-        'education': 'education',
-        'leisure': 'leisure',
-        'remove': 'remove',
-    }
-    return commands_opt.get(cmd, 'Invalid option')
-
-
 class FinanceManager:
     def __init__(self, act_money=0):
         self.money = act_money
