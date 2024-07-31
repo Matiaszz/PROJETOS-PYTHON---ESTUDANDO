@@ -7,6 +7,7 @@ class FinanceManager:
 
 
 class UserData(FinanceManager):
+
     def __init__(self, act_money=0):
         super().__init__(act_money)
 
@@ -30,8 +31,20 @@ class UserData(FinanceManager):
     def spent(self):
         try:
             insert_spent = float(input('How much money has been spent?: '))
+            if insert_spent > self.money:
+                print('You need to have a balance to perform this operation.')
+
+                while insert_spent > self.money:
+                    insert_spent = float(
+                        input('How much money has been spent?: '))
+
+                    if insert_spent > self.money:
+                        print('You need to have a balance to perform this \
+operation.')
+
             self.money -= insert_spent
-            print('Options: \n 1. Food \n 2. Health \n 3. Transport \n 4. Education \n 5. Leisure \n 6. Remove money')
+            print('Options: \n 1. Food \n 2. Health \n 3. Transport \n \
+4. Education \n 5. Leisure \n 6. Remove money')
             commands_spent = {
                 '1': 'food',
                 '2': 'health',
@@ -86,13 +99,16 @@ def main():
             '5': lambda: exit()
         }
 
-        print('Options: \n 1. Add money \n 2. Add expense \n 3. View report \n 4. View profit \n 5. Exit')
+        print('Options: \n 1. Add money \n 2. Add expense \n \
+3. View report \n 4. View profit \n 5. Exit')
 
         user_cmd = input('Choose an option: ')
         if user_cmd not in commands:
-            print('Unknown option')
             os.system('cls' if os.name == 'nt' else 'clear')
+            print('Unknown option')
+
         else:
+            os.system('cls' if os.name == 'nt' else 'clear')
             commands[user_cmd]()
 
 
