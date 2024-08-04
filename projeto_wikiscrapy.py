@@ -1,3 +1,5 @@
+# To run, paste this code in a folder with a other folder called "bin" and in folder "bin", put the chromedriver
+# this file  -> C:\Users\User\project\main.py
 from pathlib import Path
 from time import sleep
 
@@ -8,14 +10,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-
-# Chrome Options
-# https://peter.sh/experiments/chromium-command-line-switches/
-
-
-# Caminho para a raiz do projeto
 ROOT_FOLDER = Path(__file__).parent
-# Caminho para a pasta onde o chromedriver está
 CHROME_DRIVER_PATH = ROOT_FOLDER / 'bin' / 'chromedriver.exe'
 DIR_FILES = ROOT_FOLDER / 'info'
 DIR_FILES.mkdir(exist_ok=True)
